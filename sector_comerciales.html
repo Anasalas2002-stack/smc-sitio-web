@@ -1789,24 +1789,25 @@ header.smc-header.scrolled { padding: 10px 0px; background: rgba(26,37,64,0.95);
   .smc-header{background:#ffffff!important;backdrop-filter:none!important;border-bottom:1px solid #e5e7eb!important;box-shadow:0 1px 8px rgba(0,0,0,.06)!important;}.nav-menu a{color:#0B1A30!important;}.nav-menu a:hover,.nav-menu a.active{color:#3b82f6!important;}#nav-toggle svg{stroke:#0B1A30!important;}.btn-secondary{color:#0B1A30!important;border-color:#0B1A30!important;}.smc-header{background:#ffffff!important;backdrop-filter:none!important;border-bottom:1px solid #e5e7eb!important;box-shadow:0 1px 8px rgba(0,0,0,.06)!important;}.nav-menu a{color:#0B1A30!important;}.nav-menu a:hover,.nav-menu a.active{color:#2563eb!important;}#nav-toggle svg{stroke:#0B1A30!important;}.logo-area .btn-secondary,.btn-secondary{color:#0B1A30!important;border-color:#d1d5db!important;}.logo-pill{box-shadow:none!important;padding:0!important;background:transparent!important;border-radius:0!important;}/* MOBILE_RESPONSIVE_START */
 @media(max-width:768px){
   /* ── NAV ── */
-  .nav-container{padding:10px 16px!important;position:relative;}
-  #nav-toggle{display:block!important;}
+  .nav-container{padding:8px 12px!important;flex-wrap:wrap!important;gap:4px!important;}
   .nav-menu{
-    display:none!important;flex-direction:column!important;
-    position:absolute!important;top:100%!important;left:0!important;right:0!important;
-    background:#ffffff!important;padding:12px 16px!important;gap:4px!important;
-    z-index:9999!important;
-    box-shadow:0 8px 24px rgba(0,0,0,0.14)!important;
-    border-bottom:2px solid #e5e7eb!important;
+    display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+    position:static!important;
+    background:transparent!important;padding:0!important;gap:2px!important;
+    overflow-x:auto!important;overflow-y:hidden!important;
+    -webkit-overflow-scrolling:touch!important;
+    scrollbar-width:none!important;width:100%!important;
+    box-shadow:none!important;border:none!important;
+    border-top:1px solid #e5e7eb!important;padding-top:6px!important;
   }
-  .nav-menu.open{display:flex!important;}
-  .nav-menu li{width:100%!important;}
+  .nav-menu::-webkit-scrollbar{display:none!important;}
+  .nav-menu li{flex-shrink:0!important;width:auto!important;}
   .nav-menu a{
-    display:block!important;padding:12px 14px!important;
-    font-size:1rem!important;border-radius:8px!important;
-    color:#0B1A30!important;
+    display:block!important;padding:7px 12px!important;
+    font-size:0.82rem!important;border-radius:20px!important;
+    white-space:nowrap!important;color:#0B1A30!important;
   }
-  .logo-pill img{height:44px!important;width:auto!important;}
+  .logo-pill img{height:40px!important;width:auto!important;}
 
   /* ── HERO ── */
   .hero{min-height:100svh!important;}
@@ -1894,11 +1895,7 @@ header.smc-header.scrolled { padding: 10px 0px; background: rgba(26,37,64,0.95);
     </a>
     <ul class="nav-menu"><li><a href="index.html">Inicio</a></li><li><a href="sector_residencial.html">Residencial</a></li><li><a href="sector_comerciales.html" class="active">Comerciales</a></li><li><a href="sector_empresas.html">Empresas</a></li><li><a href="sector_clinicas.html">Clínicas</a></li></ul>
     <a class="btn-tech btn-secondary" href="https://wa.me/573105929950?text=Hola%2C%20quiero%20cotizar%20un%20esquema%20de%20seguridad%20con%20SMC%20Ltda." target="_blank" rel="noopener" style="padding:10px 20px;font-size:0.85rem">Contacto Directo</a>
-    <button id="nav-toggle" aria-label="Menú">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
+    
   </div>
 </header>
   <div class="sector-page-hero">
@@ -2006,9 +2003,7 @@ document.querySelectorAll('.tab-trigger').forEach(function(tab){
     document.querySelectorAll('.sector-panel').forEach(function(p,i){p.style.display=i===idx?'grid':'none';});
   });
 });
-var navToggle=document.getElementById('nav-toggle');
-var navMenu=document.querySelector('.nav-menu');
-if(navToggle)navToggle.addEventListener('click',function(){navMenu.classList.toggle('open');});
+
 var form=document.querySelector('.contact-form form');
 if(form)form.addEventListener('submit',function(e){
   e.preventDefault();
